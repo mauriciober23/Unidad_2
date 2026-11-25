@@ -7,7 +7,7 @@ class Kit:
 
     def entregar(self, cantidad):
         if cantidad <= 0 or cantidad > self.unidades:
-            print("Error: cantidad no valida")
+            print("error: cantidad no valida")
             return False
 
         self.unidades -= cantidad

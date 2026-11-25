@@ -7,10 +7,10 @@ class Kit:
 
     def entregar(self, cantidad):
         if cantidad <= 0:
-            raise ValueError("Error: cantidad no valida.")
+            raise ValueError("error : cantidad no valida.")
 
         if cantidad > self.unidades:
-            raise ValueError(f"Error: solo hay {self.unidades} kits.")
+            raise ValueError(f"error: solo hay {self.unidades} kits.")
 
         self.unidades -= cantidad
         return True
@@ -22,13 +22,13 @@ class Kit:
 class Modelo:
     def __init__(self):
         self.kits = [
-            Kit(1, "Kit escolar", "Cuadernos y lápices", 50),
-            Kit(2, "Kit de aseo", "Jabón y pasta dental", 40)
+            Kit(1, "Kitt escolar", "Cuadernos y lapices", 50),
+            Kit(2, "Kit de aseo", "Jabon y pasta dental", 40)
         ]
 
     def registrar(self, nombre, contenido, unidades):
         if unidades <= 0:
-            raise ValueError("Error: las unidades deben ser mayores a cero.")
+            raise ValueError("error: las unidades deben ser mayores a cero.")
 
         codigo = len(self.kits) + 1
         self.kits.append(Kit(codigo, nombre, contenido, unidades))
@@ -39,7 +39,7 @@ class Modelo:
             if kit.codigo == codigo:
                 return kit
 
-        raise ValueError("Error: no existe ese código.")
+        raise ValueError("error: no existe ese codigo.")
 
     def entregar(self, codigo, cantidad):
         kit = self.buscar(codigo)
